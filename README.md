@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jose Arnel Valleser — Portfolio
+
+Personal portfolio site built to showcase my skills, experience, and projects as a Frontend Developer.
+
+Live at: **[jav.dev](https://jav.dev)** _(replace with your actual URL)_
+
+---
+
+## Tech Stack
+
+| Layer            | Technology                                    |
+| ---------------- | --------------------------------------------- |
+| Framework        | [Next.js 16](https://nextjs.org) (App Router) |
+| Language         | TypeScript                                    |
+| Styling          | Tailwind CSS v4                               |
+| UI Primitives    | shadcn/ui + Base UI                           |
+| Animations       | Motion (Framer Motion)                        |
+| Icons            | Lucide React                                  |
+| Theming          | next-themes                                   |
+| Containerization | Docker                                        |
+| Deployment       | Vercel                                        |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js ≥ 20
+- npm ≥ 10
+
+### Local Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Docker
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app ships with a production-ready, multi-stage Dockerfile optimized for minimal image size.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Build the image
+docker build -t portfolio .
 
-## Deploy on Vercel
+# Run the container
+docker run -p 3000:3000 portfolio
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Deployment — Vercel
+
+This project is optimized for zero-config deployment on Vercel.
+
+1. Push the repository to GitHub.
+2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
+3. Vercel auto-detects Next.js — no configuration needed.
+4. Click **Deploy**.
+
+Every push to `main` triggers an automatic re-deploy.
+
+> For a custom domain, go to **Project Settings → Domains** in the Vercel dashboard and add your domain.
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/              # Next.js App Router (layout, page, globals)
+├── components/
+│   ├── resume/       # Portfolio sections (Hero, About, Experience…)
+│   ├── ui/           # Reusable UI primitives (Badge, Button, Card…)
+│   └── icons/        # Custom SVG icon components
+└── lib/              # Shared utilities and motion variants
+```
+
+---
+
+## Author
+
+**Jose Arnel Valleser** — Frontend Developer  
+[GitHub](https://github.com/wndrflgrc) · [valleser0502@gmail.com](mailto:valleser0502@gmail.com)
