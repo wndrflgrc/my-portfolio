@@ -7,7 +7,7 @@ import { Briefcase } from 'lucide-react';
 const experience = {
   title: 'Frontend Developer',
   company: 'DoWinn Group',
-  period: 'June 2024  Present',
+  period: 'June 2024 - Present',
   highlights: [
     'Developed and maintained web applications using React, Next.js, and Tailwind CSS',
     'Built responsive UI components for internal and customer-facing platforms',
