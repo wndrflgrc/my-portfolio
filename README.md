@@ -2,7 +2,7 @@
 
 Personal portfolio site built to showcase my skills, experience, and projects as a Frontend Developer.
 
-Live at: **[jav.dev](https://ja-valleser-portfolio.vercel.app/)** _(replace with your actual URL)_
+Live at: **[My Portfolio](https://ja-valleser-portfolio.vercel.app/)**
 
 ---
 
