@@ -2,7 +2,7 @@
 
 Personal portfolio site built to showcase my skills, experience, and projects as a Frontend Developer.
 
-Live at: **[jav.dev](https://jav.dev)** _(replace with your actual URL)_
+Live at: **[jav.dev](https://ja-valleser-portfolio.vercel.app/)** _(replace with your actual URL)_
 
 ---
 
@@ -98,4 +98,4 @@ src/
 ## Author
 
 **Jose Arnel Valleser** — Frontend Developer  
-[GitHub](https://github.com/wndrflgrc) · [valleser0502@gmail.com](mailto:valleser0502@gmail.com)
+[GitHub](https://github.com/wndrflgrc)
