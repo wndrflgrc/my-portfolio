@@ -55,7 +55,7 @@ export function ExperienceSection() {
                     {experience.title}
                   </h3>
                   <p className='text-primary font-semibold text-sm mt-0.5'>
-                    {experience.company}
+                    {/* {experience.company} */}
                   </p>
                 </div>
                 <span className='inline-flex self-start sm:self-auto items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20 whitespace-nowrap'>
