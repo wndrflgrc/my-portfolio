@@ -45,16 +45,24 @@ export function AboutSection() {
               <span className='font-semibold text-foreground'>
                 Playwright and Jest
               </span>
-              , working with cloud services such as{' '}
+              , containerizing apps with{' '}
+              <span className='font-semibold text-foreground'>Docker</span>,
+              working with cloud services such as{' '}
               <span className='font-semibold text-foreground'>
                 AWS EC2 and Lambda
               </span>
-              , and familiar with monitoring using{' '}
+              , and monitoring with{' '}
               <span className='font-semibold text-foreground'>
                 Kibana and the ELK Stack
               </span>
-              . Has knowledge of SEO and AI SEO passionate about clean,
-              efficient code and thoughtful design.
+              . I also leverage AI tools like{' '}
+              <span className='font-semibold text-foreground'>
+                GitHub Copilot
+              </span>{' '}
+              to accelerate development and improve efficiency — though they
+              remain just tools; I stay in full control of every decision and
+              line of code. Passionate about clean, efficient code and
+              thoughtful design.
             </p>
           </motion.div>
         </motion.div>

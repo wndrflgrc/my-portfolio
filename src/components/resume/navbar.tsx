@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import { motion, useScroll } from 'motion/react';
+import { motion, AnimatePresence, useScroll } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Experience', href: '#experience' },
   { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' },
+  // { label: 'Projects', href: '#projects' },
 ];
 
 export function Navbar() {
@@ -24,7 +25,10 @@ export function Navbar() {
 
   const scrollTo = (href: string) => {
     setOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    // Small delay lets the menu close before scroll to avoid layout jank
+    setTimeout(() => {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
 
   return (
@@ -47,7 +51,7 @@ export function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className='font-black text-sm tracking-tight cursor-pointer select-none'
         >
-          <span className='text-primary'>JAV</span>
+          <span className='text-primary'>Val</span>
           <span className='text-muted-foreground font-medium'>.dev</span>
         </button>
 
@@ -66,7 +70,7 @@ export function Navbar() {
             href='mailto:valleser0502@gmail.com'
             className='ml-2 px-4 py-1.5 text-sm font-semibold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors'
           >
-            Hire Me
+            Contact me
           </a>
           <div className='ml-2'>
             <ThemeToggle />
@@ -86,33 +90,37 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile dropdown */}
-      <motion.div
-        initial={false}
-        animate={
-          open ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }
-        }
-        transition={{ duration: 0.22, ease: 'easeInOut' }}
-        className='sm:hidden overflow-hidden border-b border-border bg-background/95 backdrop-blur-md'
-      >
-        <div className='max-w-3xl mx-auto px-6 py-3 flex flex-col gap-1'>
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollTo(link.href)}
-              className='w-full text-left px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted/60 transition-colors cursor-pointer'
-            >
-              {link.label}
-            </button>
-          ))}
-          <a
-            href='mailto:valleser0502@gmail.com'
-            className='mt-1 px-3 py-2.5 text-sm font-semibold text-center rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors'
+      {/* Mobile dropdown — AnimatePresence fully unmounts buttons when closed so they can't intercept taps */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key='mobile-menu'
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
+            className='sm:hidden border-b border-border bg-background/95 backdrop-blur-md'
           >
-            Hire Me
-          </a>
-        </div>
-      </motion.div>
+            <div className='max-w-3xl mx-auto px-6 py-3 flex flex-col gap-1'>
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className='w-full text-left px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted/60 transition-colors cursor-pointer'
+                >
+                  {link.label}
+                </button>
+              ))}
+              <a
+                href='mailto:valleser0502@gmail.com'
+                className='mt-1 px-3 py-2.5 text-sm font-semibold text-center rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors'
+              >
+                Contact me
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

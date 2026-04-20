@@ -8,14 +8,11 @@ import { GithubIcon } from '@/components/icons/github-icon';
 
 export function HeroSection() {
   return (
-    <section className='relative flex items-center justify-center min-h-dvh px-6 isolate'>
-      {/* contained background  uses transforms, never negative positions */}
-      <div className='absolute inset-0 -z-10 overflow-hidden'>
-        <div className='absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] -translate-x-1/2 -translate-y-1/2' />
-        <div className='absolute bottom-0 right-0 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[140px] translate-x-1/3 translate-y-1/3' />
-      </div>
-
-      {/* subtle dot grid */}
+    <section
+      id='hero'
+      className='relative flex items-center justify-center min-h-dvh px-6 isolate'
+    >
+      {/* subtle dot grid — hero only */}
       <div
         className='absolute inset-0 -z-10 opacity-30 dark:opacity-20'
         style={{
@@ -31,13 +28,77 @@ export function HeroSection() {
         animate='visible'
         className='relative text-center max-w-2xl mx-auto w-full'
       >
-        {/* Avatar / initials */}
+        {/* Avatar */}
         <motion.div variants={staggerItem} className='mb-8 flex justify-center'>
           <div className='relative'>
-            <div className='w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center shadow-xl shadow-primary/25 ring-4 ring-background'>
-              <span className='text-2xl font-bold text-primary-foreground select-none'>
-                JAV
-              </span>
+            <div className='w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center shadow-xl shadow-primary/25 ring-4 ring-background overflow-hidden'>
+              {/* Cute generic person SVG */}
+              <svg viewBox='0 0 80 80' fill='none' className='w-full h-full'>
+                {/* Hair */}
+                <path
+                  d='M 23 35 C 23 16 57 16 57 35 C 54 21 40 19 40 19 C 40 19 26 21 23 35Z'
+                  fill='white'
+                  fillOpacity='0.55'
+                />
+                {/* Head */}
+                <circle
+                  cx='40'
+                  cy='34'
+                  r='17'
+                  fill='white'
+                  fillOpacity='0.95'
+                />
+                {/* Left eye */}
+                <circle cx='33.5' cy='31' r='3' fill='#7c3aed' />
+                <circle cx='34.5' cy='30' r='1.2' fill='white' />
+                {/* Right eye */}
+                <circle cx='46.5' cy='31' r='3' fill='#7c3aed' />
+                <circle cx='47.5' cy='30' r='1.2' fill='white' />
+                {/* Blush cheeks */}
+                <ellipse
+                  cx='29'
+                  cy='36.5'
+                  rx='4'
+                  ry='2.5'
+                  fill='#f472b6'
+                  fillOpacity='0.4'
+                />
+                <ellipse
+                  cx='51'
+                  cy='36.5'
+                  rx='4'
+                  ry='2.5'
+                  fill='#f472b6'
+                  fillOpacity='0.4'
+                />
+                {/* Smile */}
+                <path
+                  d='M 33.5 38.5 Q 40 44 46.5 38.5'
+                  stroke='#7c3aed'
+                  strokeWidth='2.2'
+                  fill='none'
+                  strokeLinecap='round'
+                />
+                {/* Neck */}
+                <rect
+                  x='36'
+                  y='50'
+                  width='8'
+                  height='7'
+                  rx='4'
+                  fill='white'
+                  fillOpacity='0.9'
+                />
+                {/* Shoulders */}
+                <ellipse
+                  cx='40'
+                  cy='68'
+                  rx='22'
+                  ry='14'
+                  fill='white'
+                  fillOpacity='0.85'
+                />
+              </svg>
             </div>
             <span className='absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 ring-2 ring-background'>
               <span className='h-2 w-2 rounded-full bg-white animate-pulse' />
@@ -59,11 +120,21 @@ export function HeroSection() {
         {/* Name */}
         <motion.h1
           variants={staggerItem}
-          className='text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none mb-3'
+          className='text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-none mb-2'
         >
           <span className='text-foreground'>Jose Arnel</span>{' '}
           <span className='text-primary'>Valleser</span>
         </motion.h1>
+
+        {/* Nickname */}
+        <motion.p
+          variants={staggerItem}
+          className='text-xs sm:text-sm text-muted-foreground font-medium mb-6 tracking-wide'
+        >
+          Hello there, you can call me{' '}
+          <span className='text-primary font-semibold'>Val</span> (besides my
+          real full name)
+        </motion.p>
 
         {/* Title */}
         <motion.p
@@ -111,7 +182,7 @@ export function HeroSection() {
             className='inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors duration-200 shadow-lg shadow-primary/25'
           >
             <Mail className='w-4 h-4' />
-            Hire Me
+            Contact me
           </a>
           <a
             href='https://github.com/wndrflgrc'

@@ -18,7 +18,7 @@ export function Footer() {
           <p className='flex items-center gap-1.5 text-xs text-muted-foreground'>
             Built with{' '}
             <Heart className='w-3 h-3 text-rose-500 fill-rose-500 inline' /> by
-            Jose Arnel Valleser
+            Val
           </p>
 
           <div className='flex items-center gap-1'>

@@ -6,7 +6,7 @@ import { Briefcase } from 'lucide-react';
 
 const experience = {
   title: 'Frontend Developer',
-  company: 'DoWinn Group',
+  company: 'DW Group',
   period: 'June 2024 - Present',
   highlights: [
     'Developed and maintained web applications using React, Next.js, and Tailwind CSS',
@@ -15,7 +15,9 @@ const experience = {
     'Improved performance and usability of existing features',
     'Wrote and maintained tests using Jest and Playwright',
     'Worked with AWS EC2 and Lambda for deployment and testing',
+    'Containerized applications and managed environments using Docker',
     'Created dashboards and monitored data using Elasticsearch and Kibana',
+    'Used AI tools like GitHub Copilot to speed up development while maintaining full ownership of code quality',
   ],
 };
 
@@ -55,7 +57,7 @@ export function ExperienceSection() {
                     {experience.title}
                   </h3>
                   <p className='text-primary font-semibold text-sm mt-0.5'>
-                    {/* {experience.company} */}
+                    {experience.company}
                   </p>
                 </div>
                 <span className='inline-flex self-start sm:self-auto items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20 whitespace-nowrap'>
