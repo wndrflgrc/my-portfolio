@@ -38,6 +38,7 @@ const groups = [
     border: 'border-amber-200 dark:border-amber-800/50',
     skills: [
       'Git / GitHub',
+      'Docker',
       'REST APIs',
       'ELK Stack',
       'Kibana',
@@ -46,6 +47,14 @@ const groups = [
       'AWS Lambda',
       'SEO',
     ],
+  },
+  {
+    label: 'AI Tools',
+    colorLight: 'text-sky-600',
+    colorDark: 'dark:text-sky-400',
+    bg: 'bg-sky-50 dark:bg-sky-950/40',
+    border: 'border-sky-200 dark:border-sky-800/50',
+    skills: ['GitHub Copilot', 'Claude', 'ChatGPT', 'AI SEO'],
   },
   {
     label: 'Soft Skills',

@@ -17,6 +17,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   /* prevent horizontal scroll WITHOUT touching overflow-y */
   overflow-x: clip;
+  /* offset for fixed navbar */
+  scroll-padding-top: 80px;
 }
 
 body {

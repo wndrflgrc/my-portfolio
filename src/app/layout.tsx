@@ -39,6 +39,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        {/* Page-wide background orbs — fixed so they persist on scroll */}
+        <div className='fixed inset-0 -z-10 overflow-hidden pointer-events-none'>
+          <div className='absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] -translate-x-1/2 -translate-y-1/2' />
+          <div className='absolute bottom-0 right-0 w-[700px] h-[700px] rounded-full bg-primary/8 blur-[140px] translate-x-1/3 translate-y-1/3' />
+        </div>
         <ThemeProvider
           attribute='class'
           defaultTheme='light'
